@@ -28,3 +28,21 @@ body {
     padding: 20px;
     min-height: 500px;
 }
+
+.home-link {
+    font-weight: normal;
+    text-decoration: none;
+    color: #666;
+}
+
+.home-link:hover {
+    color: #5076fb;
+}
+
+.home-link:visited {
+    color: #666;
+}
+
+.home-link:visited:hover {
+    color: #5076fb;
+}
