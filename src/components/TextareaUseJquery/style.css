@@ -1,3 +1,17 @@
-.comp-xxx {
+.comp-textarea-use-jquery {
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 4px;
+    background-color: #fff;
+    max-height: 300px;
+    overflow-y: scroll;
+}
 
+.textarea {
+    background-color: transparent;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    resize: none;
+    outline: 0;
 }

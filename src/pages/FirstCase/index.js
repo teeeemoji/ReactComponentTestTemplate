@@ -13,7 +13,18 @@ export default class FirstCase extends React.Component {
 
     state = {
         height: 'auto',
-        content: 'x 先生 get?a=1&b= get?a=1&b= get?a=1&b= get?a=1&b= get?a=1&b= get?a=1&b= get?a=1&b=2&c=3'
+        content: 'x 先生 get?a=1&b= get?a=1&b= get?a=1&b= get?a=1&b= get?a=1&b= get?a=1&b= get?a=1&b=2&c=3\n' +
+        'asdfasdf\n' +
+        'asdf\n' +
+        'asdf\n' +
+        'asdfas\n' +
+        'fa\n' +
+        'sdff\n' +
+        'ds\n' +
+        'f\n' +
+        'sdf\n' +
+        'sd\n' +
+        'f'
     };
 
     componentDidMount() {
