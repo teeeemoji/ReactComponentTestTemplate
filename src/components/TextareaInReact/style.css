@@ -1,0 +1,23 @@
+.container {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 20px;
+    max-height: 700px;
+    padding: 2px;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    background-color: #eaeef5;
+    resize: none;
+    /*Removes scrollbar*/
+    overflow: auto;
+    transition: height 0.2s ease;
+}
+
+.textarea--ghost {
+}
