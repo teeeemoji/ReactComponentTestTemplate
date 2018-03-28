@@ -33,6 +33,7 @@ const SIZING_STYLE = [
     'box-sizing',
 ];
 
+// 拿到真实 textarea 的所有 style
 function calculateNodeStyling(node) {
     const style = window.getComputedStyle(node);
 
@@ -46,6 +47,7 @@ function calculateNodeStyling(node) {
     }, {});
 }
 
+// 拷贝 真实 textarea 的 style 到 ghostTextarea
 export const copyStyle = function (toNode, fromNode) {
 
     const nodeStyling = calculateNodeStyling(fromNode);

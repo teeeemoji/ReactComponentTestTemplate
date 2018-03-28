@@ -5,7 +5,12 @@ import TextareaInReact from '../../components/TextareaInReact'
 export default class SecondPage extends React.Component {
     render() {
         return (
-            <h1 className={style['pages-second']}>
+
+
+            <div className={style['pages-second']}>
+                <h1 className={style['pages-second-title']}>
+                    方案二: 使用隐藏 textarea 标签
+                </h1>
                 <TextareaInReact
                     value={'x 先生 get?a=1&b= get?a=1&b= get?a=1&b= get?a=1&b= get?a=1&b= get?a=1&b= get?a=1&b=2&c=3\n' +
                     'asdfasdf\n' +
@@ -20,7 +25,7 @@ export default class SecondPage extends React.Component {
                     'sd\n' +
                     'f'}
                 />
-            </h1>
+            </div>
         )
     }
 }

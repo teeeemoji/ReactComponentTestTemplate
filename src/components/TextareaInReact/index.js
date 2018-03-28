@@ -20,19 +20,20 @@ export default class TextareaInReact extends React.Component {
     }
 
     componentDidMount() {
-        this.mounted = true;
         this.copyTextareaStyle();
         this.setFilledTextareaHeight();
     }
 
     setFilledTextareaHeight() {
-
-        if (this.mounted) {
-            const element = this.ghost;
+        const element = this.ghost;
+        // 优化点
+        // console.log('判断中...')
+        // if (this.inputRef.style.height !== (element.scrollHeight + 'px')) {
+            console.log('需要重置高度')
             this.setState({
                 height: element.scrollHeight,
             });
-        }
+        // }
     }
 
     setValue(event) {
@@ -67,13 +68,13 @@ export default class TextareaInReact extends React.Component {
                 className={style['textarea--ghost']}
                 ref={(c) => this.ghost = c}
                 value={this.state.value}
-                onChange={()=>{}}
+                onChange={() => {}}
             />
         );
     }
 
     render() {
-        console.log('render');
+        // console.log('render');
         return (
             <div className={style['container']}>
                 {/*渲染一个正常的 textarea */}

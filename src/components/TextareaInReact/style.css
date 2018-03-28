@@ -15,7 +15,8 @@
     background-color: #eaeef5;
     resize: none;
     /*Removes scrollbar*/
-    overflow: auto;
+    overflow: hidden;
+    /*overflow: auto;*/
     transition: height 0.2s ease;
 }
 
