@@ -16,4 +16,5 @@
     border: 0;
     resize: none;
     outline: 0;
+    transition: height 0.2s ease;
 }

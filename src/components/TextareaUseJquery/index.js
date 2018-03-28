@@ -31,7 +31,6 @@ export default class CompName extends React.Component {
         this.bindRef = this.bindRef.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.resize = this.resize.bind(this);
-        this.delayResize = this.delayResize.bind(this);
     }
 
     componentDidMount() {
@@ -75,19 +74,10 @@ export default class CompName extends React.Component {
         this.resizing = false;
     }
 
-    delayResize() {
-        if (this.resizing) {
-            return;
-        }
-        this.resizing = true;
-        window.setTimeout(this.resize, 0);
-    }
-
     handleChange(e) {
         if (this.props.onChange) {
             this.props.onChange(e.target.value)
         }
-        // this.delayResize();
         this.resize();
     }
 }
