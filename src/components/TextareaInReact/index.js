@@ -24,27 +24,47 @@ export default class TextareaInReact extends React.Component {
         this.setFilledTextareaHeight();
     }
 
+    componentWillReceiveProps() {
+        this.clearNextFrame();
+        this.onNextFrameActionId = setTimeout(() => this.setFilledTextareaHeight());
+    }
+
+    clearNextFrame() {
+        clearTimeout(this.onNextFrameActionId);
+    }
+
     setFilledTextareaHeight() {
         const element = this.ghost;
         // 优化点
-        // console.log('判断中...')
-        // if (this.inputRef.style.height !== (element.scrollHeight + 'px')) {
-            console.log('需要重置高度')
+        console.log('判断中...')
+        if (this.inputRef.style.height !== (element.scrollHeight + 'px')) {
+            console.log('需要修改高度哦')
             this.setState({
                 height: element.scrollHeight,
             });
-        // }
+        }
     }
 
     setValue(event) {
         // this.setFilledTextareaHeight();
-        setTimeout(this.setFilledTextareaHeight);
+        this.onNextFrameActionId = setTimeout(() => this.setFilledTextareaHeight());
         const {value} = event.target;
-        this.setState({value});
+
+        if (this.props.value === undefined) {
+            this.setState({value});
+        } else {
+            this.props.onChange(value);
+        }
     }
 
     getExpandableField() {
-        const {height, value} = this.state;
+        const {height} = this.state;
+        let value;
+        if (this.props.value === undefined) {
+            value = this.state.value;
+        } else {
+            value = this.props.value;
+        }
 
         return (
             <textarea
@@ -54,27 +74,31 @@ export default class TextareaInReact extends React.Component {
                 autoFocus={true}
                 defaultValue={value}
                 ref={(c) => this.inputRef = c}
-                style={{
-                    height
-                }}
+                style={{height}}
                 onChange={this.setValue}
             />
         );
     }
 
     getGhostField() {
+        let value;
+        if (this.props.value === undefined) {
+            value = this.state.value;
+        } else {
+            value = this.props.value;
+        }
         return (
             <textarea
                 className={style['textarea--ghost']}
                 ref={(c) => this.ghost = c}
-                value={this.state.value}
+                value={value}
                 onChange={() => {}}
             />
         );
     }
 
     render() {
-        // console.log('render');
+        console.log('render');
         return (
             <div className={style['container']}>
                 {/*渲染一个正常的 textarea */}

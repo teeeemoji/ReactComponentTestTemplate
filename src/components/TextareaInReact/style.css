@@ -7,16 +7,17 @@
 .textarea {
     width: 100%;
     min-height: 20px;
-    max-height: 700px;
+    max-height: 500px;
     padding: 2px;
+    box-sizing: border-box;
     outline: none;
     box-shadow: none;
     border: none;
     background-color: #eaeef5;
     resize: none;
     /*Removes scrollbar*/
-    overflow: hidden;
-    /*overflow: auto;*/
+    /*overflow: hidden;*/
+    overflow-y: auto;
     transition: height 0.2s ease;
 }
 
